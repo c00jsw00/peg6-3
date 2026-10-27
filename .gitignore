@@ -217,3 +217,9 @@ docker-builds/
 .github/agents/speckit.*.agent.md
 emu_*.json
 container-prep/
+
+# PDC2026 rate study: raw XTC trajectories (large, reproducible by re-running drivers)
+steered/
+
+# PDC2026 rate study: scratch analysis
+.analysis/

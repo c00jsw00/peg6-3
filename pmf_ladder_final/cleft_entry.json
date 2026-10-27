@@ -1,0 +1,25 @@
+{
+  "n_windows": 61,
+  "free": [
+    137.0,
+    2.5,
+    2.76
+  ],
+  "bound": [
+    23.0,
+    182.5,
+    2.82
+  ],
+  "saddle": [
+    135.0,
+    2.5,
+    3.71
+  ],
+  "saddle_real": false,
+  "dG_on_kcalmol": 0.95,
+  "dG_bind_kcalmol": 0.05,
+  "k_on_TST_M_s": 1242000000000.5266,
+  "k_on_phys_M_s": 100000000.0,
+  "path_length": 110,
+  "path_real_frac": 0.13
+}
