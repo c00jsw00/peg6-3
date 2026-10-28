@@ -1,0 +1,152 @@
+[
+  {
+    "frame": 0,
+    "status": "rejected",
+    "reason": "cross_chain_residue_clashes"
+  },
+  {
+    "frame": 1,
+    "status": "rejected",
+    "reason": "cross_chain_residue_clashes"
+  },
+  {
+    "frame": 2,
+    "status": "rejected",
+    "reason": "cross_chain_residue_clashes"
+  },
+  {
+    "frame": 3,
+    "status": "rejected",
+    "reason": "cross_chain_residue_clashes"
+  },
+  {
+    "frame": 4,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 5,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 6,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 7,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 8,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 9,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 10,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 11,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 12,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 13,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 14,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 15,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 16,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 17,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 18,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 19,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 20,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 21,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 22,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 23,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 24,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 25,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 26,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 27,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 28,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 29,
+    "status": "passed",
+    "reason": null
+  }
+]

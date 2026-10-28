@@ -1,0 +1,16 @@
+{
+  "d_target": 48.0,
+  "n_target": 35,
+  "n_samples": 25,
+  "cv1_range": [
+    23.99036482344033,
+    36.97009121755737
+  ],
+  "cv2_range": [
+    27,
+    45
+  ],
+  "U_mean": 90.08547973632812,
+  "seed": 2,
+  "method": "FKC SMC cleft-exit TS refinement"
+}

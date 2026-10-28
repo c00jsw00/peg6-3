@@ -1,0 +1,23 @@
+{
+  "name": "rmin_d115",
+  "d_target": 115.0,
+  "n_target": 0.0,
+  "mode": "push",
+  "n_samples": 12,
+  "seed": 42,
+  "cv1_range": [
+    90.28990463280572,
+    99.12941087539483
+  ],
+  "rmin_range": [
+    41.31012326842815,
+    68.32412968522554
+  ],
+  "contacts_range": [
+    0,
+    0
+  ],
+  "P_rmin_lt4": 0.0,
+  "P_rmin_gt15": 1.0,
+  "time_s": 260.9
+}

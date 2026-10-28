@@ -1,0 +1,62 @@
+[
+  {
+    "frame": 0,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 1,
+    "status": "rejected",
+    "reason": "valence_exceeded"
+  },
+  {
+    "frame": 2,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 3,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 4,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 5,
+    "status": "rejected",
+    "reason": "same_chain_residue_clashes"
+  },
+  {
+    "frame": 6,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 7,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 8,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 9,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 10,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 11,
+    "status": "rejected",
+    "reason": "same_chain_residue_clashes"
+  }
+]

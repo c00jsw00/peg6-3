@@ -1,0 +1,25 @@
+{
+  "bound": [
+    20.0,
+    255.0,
+    2.91
+  ],
+  "free": [
+    120.0,
+    15.0,
+    2.25
+  ],
+  "ts_cv1_A": 20.0,
+  "ts_cv2_contacts": 255.0,
+  "ts_pmf_kcalmol": 2.91,
+  "free_pmf_kcalmol": 2.25,
+  "free_frames": 11,
+  "dG_on_kcalmol": 0.66,
+  "k_on_per_M_s": 2023866288362.4534,
+  "prefactor_M_per_s": 6200000000000.0,
+  "path_length": 14,
+  "path_real_fraction": 0.93,
+  "free_is_real": true,
+  "ts_is_real": true,
+  "n_windows": 55
+}

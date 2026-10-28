@@ -1,0 +1,27 @@
+[
+  {
+    "frame": 0,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 1,
+    "status": "rejected",
+    "reason": "bad_bonds_backbone"
+  },
+  {
+    "frame": 2,
+    "status": "rejected",
+    "reason": "valence_exceeded"
+  },
+  {
+    "frame": 3,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 4,
+    "status": "rejected",
+    "reason": "valence_exceeded"
+  }
+]

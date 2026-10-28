@@ -1,0 +1,152 @@
+[
+  {
+    "frame": 0,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 1,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 2,
+    "status": "rejected",
+    "reason": "same_chain_residue_clashes"
+  },
+  {
+    "frame": 3,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 4,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 5,
+    "status": "rejected",
+    "reason": "bad_bonds_backbone"
+  },
+  {
+    "frame": 6,
+    "status": "rejected",
+    "reason": "bad_bonds_backbone"
+  },
+  {
+    "frame": 7,
+    "status": "rejected",
+    "reason": "same_chain_residue_clashes"
+  },
+  {
+    "frame": 8,
+    "status": "rejected",
+    "reason": "same_chain_residue_clashes"
+  },
+  {
+    "frame": 9,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 10,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 11,
+    "status": "rejected",
+    "reason": "same_chain_residue_clashes"
+  },
+  {
+    "frame": 12,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 13,
+    "status": "rejected",
+    "reason": "valence_exceeded"
+  },
+  {
+    "frame": 14,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 15,
+    "status": "rejected",
+    "reason": "bad_bonds_backbone"
+  },
+  {
+    "frame": 16,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 17,
+    "status": "rejected",
+    "reason": "valence_exceeded"
+  },
+  {
+    "frame": 18,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 19,
+    "status": "rejected",
+    "reason": "valence_exceeded"
+  },
+  {
+    "frame": 20,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 21,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 22,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 23,
+    "status": "passed",
+    "reason": null
+  },
+  {
+    "frame": 24,
+    "status": "rejected",
+    "reason": "valence_exceeded"
+  },
+  {
+    "frame": 25,
+    "status": "rejected",
+    "reason": "within_residue_clashes"
+  },
+  {
+    "frame": 26,
+    "status": "rejected",
+    "reason": "cross_chain_residue_clashes"
+  },
+  {
+    "frame": 27,
+    "status": "rejected",
+    "reason": "bad_bonds_backbone"
+  },
+  {
+    "frame": 28,
+    "status": "rejected",
+    "reason": "cross_chain_residue_clashes"
+  },
+  {
+    "frame": 29,
+    "status": "rejected",
+    "reason": "valence_exceeded"
+  }
+]

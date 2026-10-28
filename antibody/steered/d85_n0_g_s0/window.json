@@ -1,0 +1,16 @@
+{
+  "d_target": 85.0,
+  "n_target": 0,
+  "n_samples": 12,
+  "cv1_range": [
+    66.46258617163647,
+    75.6971308509521
+  ],
+  "cv2_range": [
+    0,
+    1
+  ],
+  "U_mean": 0.0,
+  "seed": 0,
+  "method": "guidance push-out (flat free-state potential, U=0)"
+}

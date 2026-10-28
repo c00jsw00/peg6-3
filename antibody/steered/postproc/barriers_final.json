@@ -1,0 +1,21 @@
+{
+  "bound_cv1_A": 24.8,
+  "ts_cv1_A": 50.2,
+  "free_std_cv1_A": 110.0,
+  "g_bound_kcalmol": 0.0,
+  "g_ts_kcalmol": 19.234,
+  "g_free_kcalmol": 18.929,
+  "delta_g_off_kcalmol": 19.234,
+  "delta_g_on_kcalmol": 0.305,
+  "delta_g_bind_kcalmol": -18.929,
+  "k_off_per_s": 0.04815925780614834,
+  "k_on_per_M_s": 3708037190082.6636,
+  "K_D_M": 4.815925780614834e-10,
+  "k_on_physical_M_s": 100000000.0,
+  "k_off_barrier_kcalmol": 19.234,
+  "association_barrier_free": true,
+  "k_diff_limit_M_s": 10000000.0,
+  "n_smc_frames": 1904,
+  "n_guid_frames": 174,
+  "method": "SMC-reweighted bound/TS + r^2 Jacobian free plateau (anchored at CV1=85 A overlap), detailed balance"
+}

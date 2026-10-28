@@ -1,0 +1,16 @@
+{
+  "d_target": 42.0,
+  "n_target": 120,
+  "n_samples": 15,
+  "cv1_range": [
+    24.616978010096222,
+    29.055506692758783
+  ],
+  "cv2_range": [
+    105,
+    125
+  ],
+  "U_mean": 62.815982818603516,
+  "seed": 0,
+  "method": "FKC SMC association umbrella"
+}
