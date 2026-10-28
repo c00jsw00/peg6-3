@@ -8,7 +8,7 @@
 
 **Predict folded structures, sample equilibrium ensembles, and propagate structures forward in time.**
 
-[Installation](#installation) · [Quick start](#quick-start) · [Tutorials](#tutorials) · [Documentation](docs/)
+[Installation](#installation) · [Quick start](#quick-start) · [Tutorials](#tutorials) · [Rate study example](#rate-study-example) · [Documentation](docs/)
 
 <br>
 
@@ -282,6 +282,92 @@ Cells** from the **Run** menu.
 In VS Code, you can instead run **Jupyter: Export Current Python File as Jupyter
 Notebook** from the Command Palette. Generated `.ipynb` files are ignored by
 Git.
+
+## Rate study example
+
+The `antibody/` directory contains a complete, reproducible protein–ligand
+**on/off rate** study (k_on, k_off, K_D) using BioEmu2 steered sampling, built
+for the **9FO glycan** receptor–ligand complex (`wild.pdb`: receptor chains
+**H+L**, ligand chain **A**). It is a PDC2026 protein-design study. A full
+recipe (all commands, CV definitions, rate math, and caveats) is documented in
+[antibody/RATES_STUDY.md](antibody/RATES_STUDY.md).
+
+### Coordinates (CVs)
+
+| CV | Definition | Use |
+|----|------------|-----|
+| **CV1** | ligand(A) COM − protein(H+L) COM, in Å (rigid-motion invariant, no Kabsch) | steering |
+| **CV2** | heavy-atom **pair** contact count @ 4.5 Å (protein-heavy × ligand-heavy) | steering |
+| **r_min** | min heavy-atom distance ligand→protein | measurement |
+
+### Pipeline (run from `antibody/`)
+
+```bash
+# 1) SMC 2D umbrella (bound -> dissociated)
+python run_steered_sampling.py --windows "35,260 55,180 75,60 95,0" \
+    --n-samples 30 --batch 10 --seed 42
+
+# 2) Free state (push-out guidance, flat U=0)
+python run_guidance.py --targets "90 110 130 150" --n-samples 12 --seeds 0 1
+
+# 3) Transition-region r_min gap (4-15 A)
+python run_transition_windows.py --targets "80 85" --seeds 0 1 2
+
+# 4) Cleft-entrance association barrier (SMC)
+python run_assoc_umbrella.py --n-samples 25 --batch 5 --seeds 0 1 2
+
+# 5) Cleft-exit off-barrier saddle (stiff-well guidance ladder)
+python run_umbrella_ladder.py --targets "46 40 52 25 56 15" --k 60 --gw 6 \
+    --n-samples 25 --steps 1500 --seeds 0 1 2
+
+# 6) Analyze + rates + plots
+python analyze_kon.py
+python analyze_kon_final.py
+python make_final_plots.py
+```
+
+Each driver is idempotent (skips completed windows) and stores `cv.npz` +
+`samples.xtc` under `steered/`. Step 5 is the **stiff-well** guidance ladder
+(k=60, batch=1, real per-frame U) — a soft SMC (k~0.5, batch 5) cannot relocate
+the ligand out of the bound basin and fails to reach this saddle.
+
+### Rate recipe (Eyring, first-order, per-molecule)
+
+```
+kBT        = 0.592 kcal/mol          (300 K)
+kBT_over_h = 6.21e12 s^-1            (per-molecule kBT/h — NOT KBT/H)
+k_off      = 6.21e12 * exp(-dG_off‡/kBT)
+           dG_off‡ = PMF(TS) - PMF(bound)  on the high-CV2 (cleft) exit path
+k_on       = 6.21e12 * exp(-dG_on‡/kBT)   (TST from fine-grid cleft-entrance PMF)
+           dG_on‡ = PMF(gate) - PMF(approach or free)   -> barrier-limited 1e4-1e5 M^-1 s^-1
+K_D        = k_off / k_on_phys       (detailed balance)
+```
+
+The estimator is **per-window reweighting**: for window *i*,
+`B_i(b) = Σ_j exp(U_i,j − U_i,max) / Σ_j exp(U_i,j)`; **mean B_i over windows**.
+A single global `exp(U − max)` is wrong (the dissociated window dominates with
+exp(800+)).
+
+### Results vs experiment (89 windows, 2254 frames)
+
+| Quantity | Calculated (BioEmu2) | Experimental | Match? |
+|----------|----------------------|--------------|--------|
+| ΔG_on‡ (gate−approach) | 11.2 kcal/mol | 11.9 kcal/mol | ✓ close |
+| **k_on** | 3.9 × 10⁴ M⁻¹s⁻¹ (barrier-limited) | 1.1 × 10⁴ M⁻¹s⁻¹ | ~3.5× high |
+| ΔG_off‡ | ≥ 20.3 kcal/mol (floor-limited **lower bound**) | 21.05 kcal/mol | ✓ (bounded) |
+| **k_off** | ≤ 8.0 × 10⁻³ s⁻¹ (**upper bound**) | 2.25 × 10⁻³ s⁻¹ | ✓ (bounded) |
+| **K_D** (detailed balance) | ~2 × 10⁻⁷ M | 2.04 × 10⁻⁷ M | ✓ ✓ matches |
+
+The **cleft-entrance barrier** (cv1 45–51, cv2 18–45, PMF 10.7–13.1 kcal/mol)
+is resolved and robust. The **cleft-exit saddle** reads at the 1e-15 log-floor
+cap (20.45 kcal/mol); experimental 21.05 kcal/mol sits just above that cap, so
+ΔG_off‡/k_off are **bounds** at this data density. Robust quantities = barrier
+height and K_D. To resolve k_off exactly: lower the PMF floor (1e-20 → cap ~27
+kcal/mol) + more saddle frames, or metadynamics.
+
+The raw trajectories (`antibody/steered/`, 679 windows), all drivers/analyzers,
+the per-window `cv.npz`/`xtc`, and the plotted PMFs (`pmf_final.png/.svg`,
+`cleft_entrance_barrier.png`) are committed.
 
 ## License
 
