@@ -1,0 +1,31 @@
+{
+  "n_windows_used": 89,
+  "free_pmf": 2.93,
+  "approach_pmf": 1.87,
+  "gate_min_pmf": 3.85,
+  "gate_peak_pmf": 13.06,
+  "gate_real_cells": 16,
+  "dG_on_gate_free": 10.13,
+  "dG_on_gate_approach": 11.19,
+  "k_on_gate_free_M_s": 231006.2524347637,
+  "k_on_gate_approach_M_s": 38501.192146087065,
+  "k_off_s": 0.066,
+  "K_D_M": 1.7142326333577617e-06,
+  "experimental": {
+    "k_on_M_s": 11000.0,
+    "k_off_s": 0.00225,
+    "K_D_M": 2.04e-07
+  },
+  "n_frames": 2254,
+  "off_barrier": {
+    "bound_pmf": 0.15,
+    "saddle_max_pmf_floor_1e15": 20.45,
+    "dG_off_lower_bound_kcalmol": 20.3,
+    "k_off_upper_bound_per_s": 0.00799,
+    "saddle_real_frames": 17,
+    "floor_cap_kcalmol": 20.45,
+    "experimental_dG_off_req_kcalmol": 21.05,
+    "note": "Cleft-exit TS PMF is at the log-floor (20.45 kcal/mol cap at floor 1e-15). dG_off is a LOWER bound; k_off an UPPER bound. Experimental 2.25e-3 s^-1 requires 21.05 kcal/mol, which is ABOVE the floor cap and is not resolvable with a 1e-15 floor. 9 umbrella-ladder windows (stiff well k=60, guidance) added, saddle frames 12->17, but PMF still reads at floor -> barrier remains floor-limited (lower bound)."
+  },
+  "k_off_s_floor_lowerbound": 0.008
+}
